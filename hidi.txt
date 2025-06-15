@@ -1,1 +1,969 @@
-https://shz.al/kRkW2Myiaw2E22t2e3PYZES7:/~@sorenab,sssop#~@sorenab,sssop
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "prox-om.pointtoserver.com",
+          "prox-ee.pointtoserver.com",
+          "prox-vn.pointtoserver.com",
+          "prox-eg.pointtoserver.com",
+          "prox-tr.pointtoserver.com",
+          "prox-bs.pointtoserver.com",
+          "prox-au.pointtoserver.com",
+          "prox-cl.pointtoserver.com",
+          "prox-gr.pointtoserver.com",
+          "prox-ie.pointtoserver.com",
+          "prox-br.pointtoserver.com",
+          "prox-mc.pointtoserver.com",
+          "prox-hu.pointtoserver.com",
+          "prox-bn.pointtoserver.com",
+          "prox-ca.pointtoserver.com",
+          "prox-cz.pointtoserver.com",
+          "prox-pa.pointtoserver.com",
+          "prox-es.pointtoserver.com",
+          "prox-ae.pointtoserver.com",
+          "prox-bg.pointtoserver.com",
+          "prox-bb.pointtoserver.com",
+          "prox-ar.pointtoserver.com",
+          "prox-bm.pointtoserver.com",
+          "prox-ph.pointtoserver.com",
+          "prox-jp.pointtoserver.com",
+          "prox-se.pointtoserver.com",
+          "prox-at.pointtoserver.com",
+          "prox-lt.pointtoserver.com",
+          "prox-fi.pointtoserver.com",
+          "prox-in.pointtoserver.com",
+          "prox-pr.pointtoserver.com",
+          "prox-bo.pointtoserver.com",
+          "prox-af.pointtoserver.com",
+          "prox-bh.pointtoserver.com",
+          "prox-bd.pointtoserver.com",
+          "prox-rs.pointtoserver.com",
+          "prox-ro.pointtoserver.com",
+          "prox-al.pointtoserver.com",
+          "prox-ky.pointtoserver.com"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "104.17.148.22",
+        "104.17.147.22",
+        "188.114.96.3",
+        "188.114.97.3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 12334,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "set_system_proxy": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 16450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇪🇬",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇲",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇵🇭",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇵🇦",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇷",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇫🇮",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇷🇴",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇫🇷",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇸🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇩🇿",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇹",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇺",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇬",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇷",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇦",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇭",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇱",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇲🇩",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇾",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇿",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇩🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇩🇰",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇺🇸",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇪🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇪🇸",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇱🇺",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇹🇷",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇬🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇬🇷",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇭🇰",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇭🇺",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇸🇬",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇬🇧",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇮🇹",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇯🇵",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇱🇹",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇳🇱",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇹🇩",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇭",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇷🇺",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇵🇹",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇶"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇪🇬",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇲",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇵🇭",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇵🇦",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇷",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇫🇮",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇷🇴",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇫🇷",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇸🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇩🇿",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇹",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇺",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇬",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇷",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇦",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇭",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇱",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇲🇩",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇾",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇿",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇩🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇩🇰",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇺🇸",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇪🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇪🇸",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇱🇺",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇹🇷",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇬🇪",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇬🇷",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇭🇰",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇭🇺",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇸🇬",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇬🇧",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇮🇹",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇯🇵",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇱🇹",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇳🇱",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇹🇩",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇭",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇷🇺",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇵🇹",
+        "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇶"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇪🇬",
+      "server": "prox-eg.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇲",
+      "server": "prox-bm.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇵🇭",
+      "server": "prox-ph.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇵🇦",
+      "server": "prox-pa.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇷",
+      "server": "prox-tr.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇫🇮",
+      "server": "prox-fi.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇷🇴",
+      "server": "prox-ro.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇫🇷",
+      "server": "prox-es.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇸🇪",
+      "server": "prox-se.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇪",
+      "server": "prox-ae.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇩🇿",
+      "server": "prox-al.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇹",
+      "server": "prox-at.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇺",
+      "server": "prox-au.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇪",
+      "server": "prox-in.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇬",
+      "server": "prox-bg.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇷",
+      "server": "prox-br.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇦",
+      "server": "prox-ca.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇭",
+      "server": "prox-mc.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇱",
+      "server": "prox-pr.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇲🇩",
+      "server": "prox-bo.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇾",
+      "server": "prox-pr.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇨🇿",
+      "server": "prox-cz.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇩🇪",
+      "server": "prox-cl.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇩🇰",
+      "server": "prox-om.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇺🇸",
+      "server": "prox-bb.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇪🇪",
+      "server": "prox-ee.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇪🇸",
+      "server": "prox-es.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇱🇺",
+      "server": "prox-vn.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇹🇷",
+      "server": "prox-tr.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇬🇪",
+      "server": "prox-af.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇬🇷",
+      "server": "prox-gr.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇭🇰",
+      "server": "prox-ro.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇭🇺",
+      "server": "prox-hu.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇸🇬",
+      "server": "prox-bh.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇬🇧",
+      "server": "prox-bd.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇮🇹",
+      "server": "prox-lt.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇯🇵",
+      "server": "prox-bo.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇱🇹",
+      "server": "prox-bs.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇳🇱",
+      "server": "prox-ie.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇹🇩",
+      "server": "prox-rs.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇧🇭",
+      "server": "prox-ky.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇷🇺",
+      "server": "prox-bn.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇵🇹",
+      "server": "prox-ar.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "http",
+      "tag": "@𝗦𝗶𝗡𝗔𝗩𝗠👈🏻تلگرام🇦🇶",
+      "server": "prox-jp.pointtoserver.com",
+      "server_port": 10799,
+      "username": "purevpn0s12300644",
+      "password": "ioqn613v",
+      "tls": {
+        "server_name": "discord.gg",
+        "alpn": "h2,http/1.1"
+      },
+      "headers": {
+        "Host": "stream.meet.google.com"
+      }
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-30",
+        "sleep": "2-8"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:16756",
+      "secret": "DRk3emN5sFudzU8c"
+    }
+  }
+}
